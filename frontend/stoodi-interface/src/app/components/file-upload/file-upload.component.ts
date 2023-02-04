@@ -1,7 +1,7 @@
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UploadService } from 'src/app/services/upload.service';
+import { UploadService } from 'src/app/services/UploadService/upload.service';
 
 @Component({
   selector: 'app-file-upload',

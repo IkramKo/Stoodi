@@ -37,6 +37,7 @@ Pygments==2.14.0
 PyPDF2==1.26.0
 python-dateutil==2.8.2
 python-dotenv==0.21.1
+python-multipart==0.0.5
 pytz==2022.7.1
 PyYAML==6.0
 regex==2022.10.31
@@ -61,4 +62,5 @@ uvloop==0.17.0
 watchfiles==0.18.1
 wcwidth==0.2.6
 websockets==10.4
+whisper==1.1.10
 xml-cleaner==2.0.4
