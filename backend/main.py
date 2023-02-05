@@ -10,9 +10,11 @@ import shlex
 from fnmatch import fnmatch
 import whisper
 from pathlib import Path
+import json
+
 
 from autocards import Autocards
-
+from TextSummarizer import summarize_text
 
 app = web.Application()
 
@@ -20,13 +22,8 @@ app = web.Application()
 async def index(request):
     return web.Response(text="Hello world")
 
-async def flashcards_handler(request: web.Request):
-    request.content
-    return ''
-
 # Setup application routes.
 app.router.add_route("GET", "/api", index)
-app.router.add_route("POST", "/api/flashcards", flashcards_handler)
 
 cors = aiohttp_cors.setup(app, defaults={
 "*": aiohttp_cors.ResourceOptions(
@@ -73,7 +70,7 @@ def read_transcription():
         with open(filename) as f:
             return f.readlines()
 
-def generate_flashcards(text: str):
+def gen_flashcards(text: str):
     a = Autocards(in_lang="en", out_lang="en")
     a.clear_qa()
     a.consume_var(text, per_paragraph=True)
@@ -105,7 +102,26 @@ async def upload_success(sid, data):
         'data': txt
     })
     
-
+@sio.event
+async def generate_summary(sid, data):
+    summ = summarize_text(data)
+    await sio.emit('generate_summary', {
+        'data': summ
+    })
+    
+@sio.event
+async def generate_flashcards(sid, data):
+    gen_flashcards(data)
+    f = open('./output/flashcards_basic.json')
+    data = json.load(f)
+        
+    await sio.emit('generate_flashcards', {
+        'data': {
+            "Questions": data['question'],
+            "Answers": data['answer']
+        }
+    })
+    
 sio.attach(app)
     
 if __name__ == '__main__':

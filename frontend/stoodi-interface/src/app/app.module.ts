@@ -26,8 +26,10 @@ import { TranscriptBoxComponent } from './components/transcript-box/transcript-b
     BrowserAnimationsModule,
     FormsModule,
     AppMaterialModule,
+    
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,24 +1,40 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnChanges} from '@angular/core';
 import { WebsocketService } from 'src/app/services/WebSocketService/websocket.service';
 import { Message } from 'src/app/interface/Message';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-transcript-box',
   templateUrl: './transcript-box.component.html',
   styleUrls: ['./transcript-box.component.scss']
 })
-export class TranscriptBoxComponent {
+export class TranscriptBoxComponent implements OnChanges {
   content = '';
   summary = '';
+  boxTitle = 'Summary';
+  showSpinner = false;
   fileUrl: any;
 
   constructor(private websocketService: WebsocketService) {
     this.websocketService.on('transcription_end', (data) => {
       console.log(data);
       this.onReceiveMsg(data);
+    });
+
+    this.websocketService.on('generate_summary', (data) => {
+      console.log(data);
+      this.onReceiveSummary(data);
     })
+
+    this.websocketService.on('generate_flashcards', (data) => {
+      console.log(data);
+      this.onReceiveSummary(data);
+    })
+  }
+
+  ngOnChanges() {
   }
 
   sendMsg() {
@@ -35,6 +51,13 @@ export class TranscriptBoxComponent {
     // console.log(sentMessage.content);
   }
 
+  onReceiveFlashcards(sentMessage: any) {
+    let first = JSON.parse(sentMessage.data.Questions);
+    let second = JSON.stringify(first, undefined, '\n');
+    this.summary = second;
+    // console.log(sentMessage.content);
+  }
+
 
   downloadTranscript() {
     const blob = new window.Blob([this.content], { type: 'text/plain' });
@@ -45,5 +68,32 @@ export class TranscriptBoxComponent {
     downloadAncher.href = fileURL;
     downloadAncher.download = 'transcriptName';
     downloadAncher.click();
+  }
+
+  downloadSummary() {
+    const blob = new window.Blob([this.summary], { type: 'text/plain' });
+    const downloadAncher = document.createElement("a");
+    downloadAncher.style.display = "none";
+
+    const fileURL = URL.createObjectURL(blob);
+    downloadAncher.href = fileURL;
+    downloadAncher.download = 'transcriptName';
+    downloadAncher.click();
+  }
+
+  generateFlashcards() {
+    const app = document.getElementById("header");
+    app!.textContent = "Flashcards";
+
+    this.summary = '';
+    this.websocketService.send('generate_flashcards', this.content);
+
+  }
+
+  generateSummary() {
+    const app = document.getElementById("header");
+    app!.textContent = "Summary";
+
+    this.websocketService.send('generate_summary', this.content);
   }
 }

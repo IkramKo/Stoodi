@@ -1,6 +1,0 @@
-[submodule "backend/whisper.cpp"]
-	path = backend/whisper.cpp
-	url = https://github.com/ggerganov/whisper.cpp.git
-[submodule "backend/autocards"]
-	path = backend/autocards
-	url = https://github.com/paulbricman/autocards.git

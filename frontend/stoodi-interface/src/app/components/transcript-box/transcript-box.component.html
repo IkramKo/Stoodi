@@ -1,13 +1,20 @@
 <div class="text-area">
     <div class="transcript-and-summary">
-        <textarea type="text" [(ngModel)]="content" name="contentInput" style="resize: none;"></textarea>
-        <textarea type="text" [(ngModel)]="content" name="contentInput" style="resize: none;"></textarea>
+        <div class="header-and-text">
+            <p>Transcript</p>
+            <!-- <mat-spinner id="overlay"></mat-spinner> -->
+            <textarea type="text" [(ngModel)]="content" name="contentInput" style="resize: none;"></textarea>
+        </div>
+        <div class="header-and-text">
+            <p id="header" [(ngModel)]="boxTitle">{{boxTitle}}</p>
+            <textarea type="text" [(ngModel)]="summary" name="contentInput" style="resize: none;"></textarea>
+        </div>
     </div>
     <div class="button-area">
         <app-file-upload-button></app-file-upload-button>
         <button style="width:185px;" mat-raised-button (click)="downloadTranscript()"> Download Transcript </button>
-        <button style="width:185px;"mat-raised-button> Generate Summary </button>
-        <button style="width:185px;"mat-raised-button> Generate Flashcards </button>
+        <button style="width:185px;"mat-raised-button (click)="generateSummary()"> Generate Summary </button>
+        <button style="width:185px;"mat-raised-button (click)="generateFlashcards()"> Generate Flashcards </button>
         <!-- <button (click)="sendMsg()">Send Message</button> -->
     </div>
 </div>
