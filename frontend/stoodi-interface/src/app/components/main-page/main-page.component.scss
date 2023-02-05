@@ -1,0 +1,44 @@
+.page-container {
+    background-color: rgb(100,52,84);
+    // margin: 0 0 0 0;
+    // padding: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center; 
+    // align-items: center;
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.app-title {
+    line-height: 70px;
+    font-weight: 500;
+    font-size: 90px;
+    color: rgba(252,240,248,255);
+    text-shadow: -4px 2px 2px #99d4cc67;
+    // font-family: 'Nova Square', cursive;
+    font-family: 'VT323', monospace;
+}
+
+#app-descritpion {
+    font-size: 25px;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// app-transcript-box {
+//     width: 100%;
+// }

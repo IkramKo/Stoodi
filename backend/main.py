@@ -1,67 +1,51 @@
-from typing import List, Union
+from aiohttp import web
+import socketio
+import aiohttp_cors
 
-from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
-from fastapi.middleware.cors import CORSMiddleware
+from pathlib import Path
 
-app = FastAPI()
+app = web.Application()
 
-origins = ["*"]
+# Setup handlers
+async def index(request):
+    return web.Response(text="Hello world")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Setup application routes.
+app.router.add_route("GET", "/api", index)
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+cors = aiohttp_cors.setup(app, defaults={
+"*": aiohttp_cors.ResourceOptions(
+        allow_credentials=True,
+        expose_headers="*",
+        allow_headers="*",
+    )
+})
 
+# Configure CORS on all routes.
+for route in list(app.router.routes()):
+    cors.add(route)
 
-is_media_uploaded = False
-is_media_encoded = False
-is_transcription_complete = False
+sio = socketio.AsyncServer(
+    async_mode='aiohttp',
+    cors_allowed_origins=['http://127.0.0.1:4200', 'http://localhost:4200'], 
+    )
 
+@sio.event
+async def connect(sid, environ, auth):
+    print('connect ', sid)
 
-@app.post("/uploadfiles")
-async def create_upload_file(file: UploadFile):
-    return {
-        "filename": file.filename,
-        "content-type": file.content_type
-    }
+@sio.event
+async def disconnect(sid):
+    print('disconnect ', sid)
 
+@sio.event
+async def upload_success(sid, data):
+    await sio.emit('transcription_event', {
+        'data': 'Transcription has started'
+    })
 
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections: List[WebSocket] = []
-
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections.append(websocket)
-
-    def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
-
-    async def send_personal_message(self, message: str, websocket: WebSocket):
-        await websocket.send_text(message)
-
-    async def broadcast(self, message: str):
-        for connection in self.active_connections:
-            await connection.send_text(message)
-
-manager = ConnectionManager()
-
-@app.websocket("/ws/{client_id}")
-async def websocket_endpoint(websocket: WebSocket, client_id: int):
-    await manager.connect(websocket)
-    try:
-        while True:
-            data = await websocket.receive_text()
-            await manager.send_personal_message(f"You wrote: {data}", websocket)
-            await manager.broadcast(f"Client #{client_id} says: {data}")
-    except WebSocketDisconnect:
-        manager.disconnect(websocket)
-        await manager.broadcast(f"Client #{client_id} left the chat")
-        
+sio.attach(app)
+    
+if __name__ == '__main__':
+    web.run_app(app, port=8089)
+    

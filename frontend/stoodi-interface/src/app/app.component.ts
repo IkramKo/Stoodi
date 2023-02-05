@@ -7,6 +7,4 @@ import {MatButtonModule} from '@angular/material/button';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'stoodi-interface';
-}
+export class AppComponent {}

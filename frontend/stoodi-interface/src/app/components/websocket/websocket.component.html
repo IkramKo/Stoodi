@@ -1,0 +1,22 @@
+<!--src\app\app.component.html-->
+<h1>
+  Angular + WebSockets
+</h1>
+<div>
+  <h1>Sent Messages</h1>
+  <div [(ngModel)]="content">{{content}}</div>
+  <br>
+  <ul>
+    <li *ngFor="let item of sent">Source: {{item.source}} -> Content {{item.content}}</li>
+  </ul>
+</div>
+
+<br>
+<div>
+  <h1>Received Messages</h1>
+  <div [(ngModel)]="message">{{message}}</div>
+  <br>
+  <ul>
+    <li *ngFor="let item of received">Source: {{item.source}} -> Content {{item.content}}</li>
+  </ul>
+</div>
