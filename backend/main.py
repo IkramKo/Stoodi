@@ -78,7 +78,9 @@ def gen_flashcards(text: str):
 
 sio = socketio.AsyncServer(
     async_mode='aiohttp',
-    cors_allowed_origins=['http://127.0.0.1:4200', 'http://localhost:4200'], 
+    cors_allowed_origins='*', 
+    async_handlers=True,
+    ping_timeout=600
     )
 
 @sio.event
@@ -98,6 +100,7 @@ async def upload_success(sid, data):
     })
     whisper_transcribe()
     txt = (" ".join(read_transcription()))
+    
     await sio.emit('transcription_end', {
         'data': txt
     })
@@ -114,7 +117,7 @@ async def generate_flashcards(sid, data):
     gen_flashcards(data)
     f = open('./output/flashcards_basic.json')
     data = json.load(f)
-        
+    
     await sio.emit('generate_flashcards', {
         'data': {
             "Questions": data['question'],

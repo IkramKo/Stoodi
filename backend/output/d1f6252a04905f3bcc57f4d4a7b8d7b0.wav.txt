@@ -1,0 +1,106 @@
+ All right, so then we get to what is poisoning then? So, poisoning is a pathologic state
+ caused by a toxic agent. It could be intentional, like the assassination of Cleopatra with
+ snake venom, or it could be accidental, like in the case of Mary Curie who studied
+ ionic radiations without knowing they were super harmful. In all cases, poisoning will often mimic
+ symptoms of known diseases, right? So, you always have to consider that maybe it's a disease,
+ but then if you can't rule it out, you should also consider poisoning with different agents.
+ The incidence of poisoning is highest in children because smaller body means you need a smaller
+ concentration to reach a poisonous state, but the mortality is lower, right? The metabolism and
+ the resilience of children to poison is actually quite amazing. I guess it, again, has some form
+ of evolutionary pressure where when you're a kid, you tend to put more stuff in your mouth and
+ expose and touching things so that our body evolves to be more protective and resilient to that
+ early on, but then when you grow up as adults, you kind of learn what to avoid. So, then your body
+ can devote those resources to other stuff instead. So, I have some US data from 2014,
+ so probably we'll need to update them soon, but it's probably still close to that.
+ About 95% of poisoning deaths are drug related, so that's why it's really important
+ in the context of pharmacology, and about 75% of them are suicides. I volunteer in a suicide
+ prevention center answering the phones and helping out people, and I can confirm that
+ suicide using medications is by far one of the most common, you know, just in attempts, even if
+ failed attempts, it's very common just because they're very accessible, right? In the US,
+ guns are also more accessible, and you can see that their use in suicide is also much more important
+ than let's say here in Canada where drugs are the primary method.
+ Also, quite interestingly, while updating this lecture, I found out that a lot of Canadians are
+ accidentally poisoning themselves while cleaning to prevent COVID, so one of the unknown and kind
+ of hidden effects of this pandemic. So, watch out for the over-cleaning, right, and the types of
+ agents and things that you're using if you're into a septosizing your whole apartment,
+ right? So, the Canadian Poison Center has received more calls of that nature since March.
+ Some fundamentals of poison treatment management. So, there are five things that can be done. So,
+ supportive care, which is poison independent, right? Like respiratory support, electrolyte,
+ and fluid management, blood glucose monitoring, right? This happens no matter what the poison is,
+ that's why it's poison independent. Then you want to identify the poison, of course, as much as
+ possible. You want to inhibit further absorption. If it has been ingested, you can use activated
+ charcoal or gastric lavage. If it's topical exposure, like a gas or a substance that was on the skin,
+ use surface decontamination and showering. Then you also want to promote poison excretion using
+ theoretics. Try to pee it out. Hemodialysis to clean the blood and blood exchange if you need to
+ replace some of it. And then, if an antidote is available, by all means, please use it. A good
+ example would be, let's say, in a lock zone for opioids. Unfortunately, a lot of poisons
+ don't have antidotes. So, this option is not always available. So, here's just an example,
+ like how we can minimize poison absorption. So, activated charcoal is one of the preferred
+ method. It's inert and it's unobserved, so it's very safe. The activated charcoal forms carbon
+ complexes with the poisons. And then, so it binds to the drug or the other, the chemical,
+ and then prevents it from being absorbed and then they just get excreted together. If it's
+ taken within 30 minutes of exposure, it's 90% efficient. The longer the time pass, the faster
+ the efficacy declines. You can see that a lot of drugs that were introduced in this course are
+ agents that are, that can be treated using activated charcoal. But you can see that it's not
+ perfect. There are certain drugs and agents with which activated charcoal doesn't bind strongly,
+ too. So, it wouldn't help. You can think of iron or lithium, for example, which has a high risk of
+ poisoning due to its narrow therapeutic window. It's not an option there. Other, you know, kind of
+ the same vein, the same strategy are heavy metal antagonists. Those are called keylating agent,
+ and they're specific for heavy metals because heavy metal poisoning is also a common case of
+ toxicity. So, basically, again, you can see that a keylating agent just binds to the metallic
+ iron, whatever it is, and just prevents it from doing any harm being absorbed. It just, it makes
+ it become inert. So, we have different ones like diferoxamine, for iron specifically,
+ damere capral for different ones like arsenic, gold, mercury, lead. Always consider that you
+ get more benefits the faster it's administered. But they do have some
+ toxicities. That's why you don't just give it for fun to everyone. So, they can cause some
+ techiecardia, nephrotoxicity, some allergic reactions. So, still have to be careful with the dosing,
+ try to give the necessary dose, but no more than that. Other options, gastric lavage. So,
+ try to empty the... So, you're going to put the person on the side. Usually, they're going to be
+ on their left side because the opening to the duodenum tends to be on... It's going to be
+ against gravity towards the right side of the body. So, keep the gastric fluid
+ pooling down in the stomach, and then you can empty it to prevent further absorption.
+ So, it has to be left side in most individuals. Whole bowel irrigation. So, here, you just kind of
+ push and flood everything in the GI with a lot of fluid just to dilute everything and push it out.
+ Body surface decontamination looks like this. You want to clean someone as fast and as much as
+ possible to minimize the damage. Not a fun experience, of course. Then, what you can do is to maximize
+ poison removal. Remember, iron trapping from one of the early lectures of 300 or 500.
+ This works with weak acid and weak bases that you can play around with the pH to make it into a
+ more polar versus less polar form. So, here, for example, sodium bicarbonate can help to increase
+ excretion of weak acids because it makes the urine more alkaline and that means the acids
+ become more polar. You can see weak acid if the urine is alkaline, the weak acids will become polar,
+ which means that then they won't get reabsorbed as much. So, drugs like aspirin and phenobarbital.
+ This is a good technique to use for poisoning with those agents. Hemodialysis. Also, good option
+ to clean the blood. So, basically, you create a system where the blood has to circulate into a
+ machine that contains a carbon-based agent or another thing that can clean and that binds to the
+ toxicant so that when it comes out on the other side, it's cleaned out of this harmful molecule.
+ It's best when blood, the toxicant levels in the blood, are high and that there's poor binding to
+ plasma protein because if there is high binding to plasma protein, it's going to be harder to get
+ rid of it because it's going to remain on the plasma proteins and then the plasma protein will
+ just circulate around and then go back in the body and then the toxicant is still attached to it.
+ So, it has to be free-floating so that it can remain within this adsorption container and not go
+ back into the body. And, of course, there are some specific antidotes. So, the ones within this
+ red box are some that are antidotes to drugs that were discussed in this class or will be discussed
+ in future topics. So, those should be remembered. You can see that you have acetylcysteine for
+ treatments of acetaminophen overdose. You can see that a lot of the anticoagulant drugs like
+ warfarin, heparin, dabigatron, those have antidotes as well in case of overdose,
+ naloxone for opioids. So, just remember those antidotes that exist for those drugs,
+ it has the chapters from the textbook as well where they are referred to. The ones below that,
+ especially potassium iodide down here, that's going to be discussed in subsequent slides in this
+ topic specifically. So, going to have to be known as well. And, of course, food poisoning.
+ Common source include raw eggs, meat, fish, salad bars, and buffet, unpassurized milk. You can see
+ from this whole diagram over here. It's caused by common pathogens found on those uncooked items,
+ usually. So, like salmonella, ecoli, the rotavirus. The biggest concern with food poisoning is really
+ the risk of dehydration. And, if it's an ecoli based food poisoning, then it could lead to kidney
+ failure, mostly with risk population. But, in many cases, it's just you're going to have a
+ probably one, a single bad night. You're going to get some diarrhea and deasiness,
+ probably have a little intimacy with the toilet. But, if you make sure to hydrate yourself,
+ eat a tiny bit, and then you make it through the night or the day, it should pass after that. If
+ it remains for a couple of days, then definitely seek medical help, medical attention, because then
+ it could be like a very virulent strand of one of those pathogens or something else completely.
+ But, there's many things you can do to put the risks close to zero, right? Avoid certain foods.
+ Be very careful where you eat those common sources of food items. There's a lot of prevention. You
+ can do it washing your hands, washing your products, etc. And, again, stay hydrated and it's going to pass.
+ Just to conclude this topic, I invite you to watch this short video that kind of summarizes
+ the approach to the poison patient and just from a more clinical approach. It's very short, so you
+ can watch it for concluding this chapter of the class. If you want to take a break, now it would be a
+ a good time.

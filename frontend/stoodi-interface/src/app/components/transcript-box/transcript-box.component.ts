@@ -14,7 +14,7 @@ export class TranscriptBoxComponent implements OnChanges {
   content = '';
   summary = '';
   boxTitle = 'Summary';
-  showSpinner = false;
+  disableSummaryFlag = false;
   fileUrl: any;
 
   constructor(private websocketService: WebsocketService) {
@@ -29,8 +29,8 @@ export class TranscriptBoxComponent implements OnChanges {
     })
 
     this.websocketService.on('generate_flashcards', (data) => {
-      console.log(data);
-      this.onReceiveSummary(data);
+      //console.log(data);
+      this.onReceiveFlashcards(data);
     })
   }
 
@@ -44,18 +44,33 @@ export class TranscriptBoxComponent implements OnChanges {
   onReceiveMsg(sentMessage: any) {
     this.content = sentMessage.data;
     // console.log(sentMessage.content);
+    this.disableSummaryFlag = false;
   }
 
   onReceiveSummary(sentMessage: any) {
     this.summary = sentMessage.data;
     // console.log(sentMessage.content);
+    this.disableSummaryFlag = false;
   }
 
   onReceiveFlashcards(sentMessage: any) {
-    let first = JSON.parse(sentMessage.data.Questions);
-    let second = JSON.stringify(first, undefined, '\n');
-    this.summary = second;
-    // console.log(sentMessage.content);
+
+    let output: string  = "Questions:\n"
+
+    let questions = sentMessage['data']['Questions']
+    let answers = sentMessage['data']['Answers']
+    
+    for(let q_key in questions) {
+      output += q_key + ". " + questions[q_key] + '\n'
+    }
+
+    output += "\nAnswers:\n"
+    for(let a_key in answers) {
+      output += a_key + ". " + answers[a_key] + '\n'
+    }
+
+    this.summary = output;
+    this.disableSummaryFlag = false;
   }
 
 
@@ -87,6 +102,7 @@ export class TranscriptBoxComponent implements OnChanges {
 
     this.summary = '';
     this.websocketService.send('generate_flashcards', this.content);
+    this.disableSummaryFlag = true;
 
   }
 
@@ -95,5 +111,11 @@ export class TranscriptBoxComponent implements OnChanges {
     app!.textContent = "Summary";
 
     this.websocketService.send('generate_summary', this.content);
+    this.disableSummaryFlag = true;
+  }
+
+  clearBoxes() {
+    this.content = ''
+    this.summary = ''
   }
 }
