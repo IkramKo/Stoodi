@@ -1,3 +1,9 @@
+#particles-js {
+    position: absolute;
+    height: 99%;
+    width: 99%;
+}
+
 .page-container {
     // background-color: rgb(100,52,84);
     background: linear-gradient(180deg, rgba(76,35,61,1) 0%, rgb(119, 62, 106) 35%, rgb(158, 108, 146) 100%);
@@ -15,6 +21,7 @@
 }
 
 .page-content {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
