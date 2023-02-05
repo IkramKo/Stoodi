@@ -1,5 +1,9 @@
 .page-container {
-    background-color: rgb(100,52,84);
+    // background-color: rgb(100,52,84);
+    background: linear-gradient(180deg, rgba(76,35,61,1) 0%, rgb(119, 62, 106) 35%, rgb(158, 108, 146) 100%);
+    // background: radial-gradient(ellipse at top, rgba(76,35,61,1) 0%, rgba(99,48,87,1) 35%, rgba(212,174,203,1) 100%);
+
+
     // margin: 0 0 0 0;
     // padding: 0 0 0 0;
     width: 100%;
@@ -19,7 +23,14 @@
     align-items: center;
 }
 
-.app-title {
+.title-and-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.app-title, .app-description {
     line-height: 70px;
     font-weight: 500;
     font-size: 90px;
@@ -29,16 +40,19 @@
     font-family: 'VT323', monospace;
 }
 
-#app-descritpion {
-    font-size: 25px;
+.app-description {
+    font-size: 35px !important;
 }
 
 .button-area {
+    width: 75%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-// app-transcript-box {
-//     width: 100%;
-// }
+.transcript-box {
+    width: 80%;
+    height: 70%;
+    margin-bottom: 15px;
+}

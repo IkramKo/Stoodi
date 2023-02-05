@@ -1,7 +1,7 @@
 <div class="choose-and-upload-container">
   <!-- This ugly workaround was necessary to be able to style the button but hey, if it works, it works -->
   <div class="choose-button">
-    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+    <button style="width:185px;" type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
     <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
   </div>
 

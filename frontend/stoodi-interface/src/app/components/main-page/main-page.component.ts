@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class MainPageComponent {
   title = 'stoodi-interface';
+  transcript = '';
+
+  updateContent(content: string) {
+    this.transcript = content;
+  }
 }

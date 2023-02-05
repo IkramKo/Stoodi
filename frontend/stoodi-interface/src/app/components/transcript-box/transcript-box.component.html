@@ -1,3 +1,13 @@
-<div>
-    <textarea type="text" required [(ngModel)]="content" name="contentInput" cols="40" rows="5"></textarea>
+<div class="text-area">
+    <div class="transcript-and-summary">
+        <textarea type="text" [(ngModel)]="content" name="contentInput" style="resize: none;"></textarea>
+        <textarea type="text" [(ngModel)]="content" name="contentInput" style="resize: none;"></textarea>
+    </div>
+    <div class="button-area">
+        <app-file-upload-button></app-file-upload-button>
+        <button style="width:185px;" mat-raised-button (click)="downloadTranscript()"> Download Transcript </button>
+        <button style="width:185px;"mat-raised-button> Generate Summary </button>
+        <button style="width:185px;"mat-raised-button> Generate Flashcards </button>
+        <!-- <button (click)="sendMsg()">Send Message</button> -->
+    </div>
 </div>

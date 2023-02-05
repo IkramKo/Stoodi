@@ -20,6 +20,10 @@ export class WebsocketService {
     this.socket.on('upload_success', () => {
       console.log('hello world')
     })
+
+    // this.socket.on('transcription_end', (data) => {
+    //   console.log(data)
+    // })
   }
 
   reset() {
@@ -33,11 +37,7 @@ export class WebsocketService {
 
   // sends event to server
   send<T>(event: string, message?: T): void {
-    if (message) {
-        this.socket.send(event, message);
-    } else {
-        this.socket.emit(event);
-    }
+    this.socket.emit(event, message)
   }
 
   onNewMessage() {
